@@ -5,16 +5,16 @@ const Footer: React.FC = () => {
 	const { Title } = Typography;
 	
 	return (
-		<div className="container mx-auto text-start py-5">
+		<div className="container mx-auto text-start py-5 px-10 md:px-0">
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-				<div>
+				<div className="mb-4 md:mb-0">
 					<Title level={4}>Address</Title>
 					<div className="mt-4">
-					<p>382 NE 191st St # 87394 Miami, FL 33179-3899</p>
-					<p>
-						+1 (305) 547-9909 (9am - 5pm EST, Monday - Friday)
-					</p>
-					<p>support@learncode.com</p>
+						<p>382 NE 191st St # 87394 Miami, FL 33179-3899</p>
+						<p>
+							+1 (305) 547-9909 (9am - 5pm EST, Monday - Friday)
+						</p>
+						<p>support@learncode.com</p>
 					</div>
 					<div className="flex gap-6">
 						<FacebookFilled style={{ fontSize: '28px', color: '#aaa' }} />
@@ -23,35 +23,43 @@ const Footer: React.FC = () => {
 						<LinkedinFilled style={{ fontSize: '28px', color: '#aaa' }} />
 					</div>
 				</div>
-				<div className="w-2/4 mx-auto">
+				<div className="w-full md:w-2/4 mx-auto">
 					<Title level={4}>Explore</Title>
 					<div className="flex items-center w-full gap-10 mt-4">
 						<div>
-							<p>Start here</p>
-							<p>Blogs</p>
-							<p>About us</p>
+							{
+								footerItems.slice(0, 3)
+									.map((item, index) => <p key={index}>{item}</p>)
+							}
 						</div>
 						<div>
-							<p>Succes story</p>
-							<p>Courses</p>
-							<p>Contact us</p>
+							{
+								footerItems.slice(3, 6)
+									.map((item, index) => <p key={index}>{item}</p>)
+							}
 						</div>
 					</div>
 				</div>
-				<div className="w-1/3 mx-auto">
+				<div className="w-full md:w-1/3 mx-auto">
 					<Title level={4}>Information</Title>
 					<div className="mt-4">
-					<p>Membership</p>
-					<p>Purchase guide</p>
-					<p>Privacy policy</p>
-					<p>Terms of services</p>
+						{
+							footerItems.slice(-4)
+								.map((item, index) => <p key={index}>{item}</p>
+								)
+						}
 					</div>
 				</div>
 			</div>
 			<p className="my-2 text-center">&copy;2022 LearnCode. All Rights Reserved by LearnCode.</p>
 		</div>
-		
 	);
 }
 
 export default Footer;
+
+const footerItems = [
+	'Start here', 'Blogs', 'About us',
+	'Succes story','Courses','Contact us',
+	'Membership', 'Purchase guide', 'Privacy policy', 'Terms of services'
+]

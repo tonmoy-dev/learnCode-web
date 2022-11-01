@@ -1,5 +1,5 @@
 import { MenuOutlined } from "@ant-design/icons";
-import { Button, Drawer, Layout, Typography } from "antd";
+import { Button, Drawer, Layout } from "antd";
 import { useEffect, useState } from "react";
 import { useLocation } from 'react-router-dom';
 import LeftMenu from "./LeftMenu";
@@ -16,8 +16,7 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     setVisible(false);
   }, [location]);
- 
-  const { Title } = Typography;
+  
 
   return (
     <nav className="navbar">

@@ -22,8 +22,8 @@ code {
 
 /* back to top */
 .scroll-to-top{
-  background-color: #FA8BFF;
-  background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+  background-color: #219ebcff;
+  background-image: linear-gradient(45deg, #8ecae6ff 0%, #219ebcff 52%, #8ecae6ff 90%);
 
 }
 /* Navbar */

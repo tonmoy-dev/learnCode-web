@@ -3,8 +3,8 @@ import Course from "../../components/Course/Course";
 
 const Courses: React.FC = () => {
     return (
-        <div className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="container mx-auto py-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {
                     courses.map((course, index) => (
                         <Course course={course} key={index} />
