@@ -1,41 +1,72 @@
-import { Avatar, Card, Image } from 'antd';
-import React from 'react';
-import { BsPeople } from 'react-icons/bs';
+import { Card, Image } from 'antd';
 
 const { Meta } = Card;
 
-type CourseType = {
+interface CourseType {
+    _id: string,
     title: string,
-    description: string,
+    subTitle?: string,
+    description?: string,
     thumbnail: string,
-}
-interface CourseProps {
-    course: CourseType
+    duration?: number,
+    lectures?: number,
+    instructor?: string,
+    rating?: number,
+    enrolled?: number,
+    originalPrice?: number,
+    currentPrice?: number,
+    label?: string
 }
 
-const Course: React.FC<CourseProps> = ({ course }): JSX.Element => (
-    <Card
+interface CoursesProps {
+    courseObj: CourseType[]
+}
+
+
+const Course = () => {
+    // console.log(course);
+    
+   /*  const { title,
+        subTitle,
+        description,
+        thumbnail,
+        duration,
+        lectures,
+        instructor,
+        rating,
+        enrolled,
+        originalPrice,
+        currentPrice,
+        status
+    } = course; */
+    return (
+        <Card
         hoverable
         style={{ width: 300, margin: 'auto'}}
         cover={
             <Image
                 // width={200}
                 alt='thumbnail'
-                src={course.thumbnail}
+                // src={thumbnail}
             />
         }
         bodyStyle={{ fontSize: '16px' }}
     >
         <Meta
-            avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-            title={course.title}
-            description={course.description}
+            // avatar={<Avatar src="" />}
+            // title={ title}
+            // description={ description}
         />
         <div className='flex justify-between'>
-            <p> <BsPeople /> 77</p>
-            <p>Free</p>
+            {/* <p>{ instructor}</p>
+            <span>{ rating} (<BsPeople /> { enrolled})</span>
+            <span>{ duration} { lectures}</span>
+            <span>{ currentPrice} { originalPrice}</span>
+            <span>{ status}</span> */}
         </div>
     </Card>
-);
+    )
+}
+
 
 export default Course;

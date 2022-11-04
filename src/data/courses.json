@@ -1,0 +1,87 @@
+[
+    
+    {
+        "title":"Advanced CSS and Sass: Flexbox, Grid, Animations and More!",
+        "subTitle":"The most advanced and modern CSS course on the internet: master flexbox, CSS Grid, responsive design, and so much more.",
+        "description":"The most advanced and modern CSS course on the internet: master flexbox, CSS Grid, responsive design, and so much more.",
+        "thumbnail":"https://i.ibb.co/YbgZHCh/n-U9-Ew-D4a-Q0-GAMOi-Tvlt-Q.png",
+        "duration": 28,
+        "lectures": 26,
+        "instructor":"Jonas Schmedtmann",
+        "rating": 4.8,
+        "enrolled": 8280,
+        "originalPrice": 84.99,
+        "currentPrice":16.99,
+        "status":"Bestseller"
+    },
+    {
+        "title":"The Complete Web Developer in 2023",
+        "subTitle":"Learn to code and become a Web Developer in 2023 with HTML, CSS, Javascript, React, Node.js, Machine Learning & more!",
+        "description":"Learn to code and become a Web Developer in 2023 with HTML, CSS, Javascript, React, Node.js, Machine Learning & more!",
+        "thumbnail":"https://i.ibb.co/YbgZHCh/n-U9-Ew-D4a-Q0-GAMOi-Tvlt-Q.png",
+        "duration":38.5,
+        "lectures":399,
+        "instructor":"Andrei Neagoie",
+        "rating":4.7,
+        "enrolled":7428,
+        "originalPrice":84.99,
+        "currentPrice":16.99,
+        "status":"Bestseller"
+    },
+    {
+        "title":"The Complete JavaScript Course 2022",
+        "subTitle":"The modern JavaScript course for everyone! Master JavaScript with projects, challenges and theory. Many courses in one!",
+        "description":"The modern JavaScript course for everyone! Master JavaScript with projects, challenges and theory. Many courses in one!",
+        "thumbnail":"https://i.ibb.co/YbgZHCh/n-U9-Ew-D4a-Q0-GAMOi-Tvlt-Q.png",
+        "duration":69,
+        "lectures":320,
+        "instructor":"Jonas Schmedtmann",
+        "rating":4.8,
+        "enrolled":2000,
+        "originalPrice":84.99,
+        "currentPrice":24.99,
+        "status":"Bestseller"
+    },
+    {
+        "title":"The Complete 2022 Web Development Bootcamp",
+        "subTitle":"Become a Full-Stack Web Developer with just ONE course. HTML, CSS, Javascript, Node, React, MongoDB, Web3 and DApps.",
+        "description":"Become a Full-Stack Web Developer with just ONE course. HTML, CSS, Javascript, Node, React, MongoDB, Web3 and DApps",
+        "thumbnail":"https://i.ibb.co/YbgZHCh/n-U9-Ew-D4a-Q0-GAMOi-Tvlt-Q.png",
+        "duration":65.5,
+        "lectures":490,
+        "instructor":"Dr. Angela Yu",
+        "rating":4.7,
+        "enrolled":1000,
+        "originalPrice":84.99,
+        "currentPrice":25.99,
+        "status":"Bestseller"
+    },
+    {
+        "title":"The Web Developer Bootcamp 2022",
+        "subTitle":"he only course you need to learn web development - HTML, CSS, JS, Node, and More!",
+        "description":"The only course you need to learn web development - HTML, CSS, JS, Node, and More!",
+        "thumbnail":"https://i.ibb.co/YbgZHCh/n-U9-Ew-D4a-Q0-GAMOi-Tvlt-Q.png",
+        "duration":64,
+        "lectures":615,
+        "instructor":"Colt Steele",
+        "rating":4.7,
+        "enrolled":500,
+        "originalPrice":84.99,
+        "currentPrice":16.99,
+        "status":"null"
+    },
+    {
+        "title":"Modern JavaScript - From Novice to Ninja",
+        "subTitle":"A full 20-hour course about JavaScript, from the very beginning to ninja-level. The complete JS bootcamp! Also available on Udemy.",
+        "description":"A full 20-hour course about JavaScript, from the very beginning to ninja-level. The complete JS bootcamp! Also available on Udemy.",
+        "thumbnail":"https://i.ibb.co/YbgZHCh/n-U9-Ew-D4a-Q0-GAMOi-Tvlt-Q.png",
+        "duration":20,
+        "lectures":100,
+        "instructor":"Net Ninja",
+        "rating":4.9,
+        "enrolled":600,
+        "originalPrice":49.99,
+        "currentPrice":20,
+        "status":"null"
+    }
+]
