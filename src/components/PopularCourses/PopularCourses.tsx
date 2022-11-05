@@ -1,87 +1,123 @@
-import { Card, Image } from "antd";
-import axios from "axios";
-import React, { useState } from 'react';
-import { BsPeople } from 'react-icons/bs';
-import useSWR from "swr";
-const { Meta } = Card;
+import React from 'react';
+import { Course } from '../../models/course.model';
+import { useAddCourseMutation, useCourseQuery, useCoursesQuery, useDeleteCourseMutation, useUpdateCourseMutation } from "../../services/api/coursesApi";
 
-type CourseType = {
-    _id: string,
-    title: string,
-    subTitle?: string,
-    description?: string,
-    thumbnail: string,
-    duration?: number,
-    lectures?: number,
-    instructor?: string,
-    rating?: number,
-    enrolled?: number,
-    originalPrice?: number,
-    currentPrice?: number,
-    label?: string
-}
-/* 
-interface CoursesProps {
-    course: CourseType[]
-}
- */
-
-// const url = "https://learn-code-api.onrender.com/api/courses";
-const url = "http://localhost:5000/api/courses";
 
 const PopularCourses: React.FC = () => {
-  const [courses, setCourses] = useState<CourseType[]>([]);
-    
-  const fetcher = (url: string) => axios.get(url).then((res) => setCourses(res.data));
-  const { data, error } = useSWR(`${url}`, fetcher);
-  if (error) return <div>Loading failed</div>
-    console.log(data)
+  const { data, error, isLoading, isFetching, isSuccess } = useCoursesQuery();
+  // console.log(data);
   return (
     <>
-      {
-        (!data) && (<div>Loading..</div>)
-      }
-      {
-        (courses.length !== 0) && <div className="container mx-auto py-10">
+      <div className="container mx-auto py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {
-            courses.map((course: CourseType, index: number) => (
-              <div key={index}>
-                <Card
-                  hoverable
-                  style={{ width: 300, margin: 'auto' }}
-                  cover={
-                    <Image
-                      // width={200}
-                      alt='thumbnail'
-                      src={course.thumbnail}
-                    />
-                  }
-                  bodyStyle={{ fontSize: '16px' }}
-                >
-                  <Meta
-                    // avatar={<Avatar src="" />}
-                    title={course.title}
-                  // description={ description}
-                  />
-                  <div className='flex justify-between'>
-                    <p>{course.instructor}</p>
-                    <span>{course.rating} (<BsPeople /> {course.enrolled})</span>
-                    <span>{course.duration} {course.lectures}</span>
-                    <span>{course.currentPrice} {course.originalPrice}</span>
-                    <span>{course?.label}</span>
+        {isLoading && <p>Loading...</p>}
+            {isFetching && <p>Fetching...</p>}
+          {error && <p>Got error</p>}
+          {isSuccess && (
+            <div className=''>
+              {
+                data.map((course: Course) => (
+                  <div key={course?._id}>
+                    <p className='text-xl text-red-600'>{course.title}</p>
+                      <CourseDetail _id={course?._id} />
                   </div>
-                </Card>
-              </div>
-            ))
-          }
-                
+                )
+                )
+              }
+            </div>
+          )}
+          <div>
+            <AddCourse />
+          </div>
         </div>
       </div>
-      }
-      
     </>
   );
 };
 
+export const CourseDetail = ({ _id }: { _id: string }) => {
+  const { data } = useCourseQuery(_id);
+  // console.log(data);
+  return (
+    <div className='border border-2 border-green-500'>
+      <p>{data?.description}</p>
+    </div>
+  )
+}
+
+
+export const AddCourse = () => {
+  const [addCourse] = useAddCourseMutation();
+  const [updateCourse] = useUpdateCourseMutation();
+  const [deleteCourse] = useDeleteCourseMutation();
+  // const {refetch} = useCoursesQuery();
+  const course = {
+    "title": "Advanced",
+    "subTitle": "The most advanced  master flexbox, CSS Grid, responsive design, and so much more.",
+    "description": "The most advanced and modern CSS course on the internet: master flexbox, CSS Grid, responsive design, and so much more.",
+    "thumbnail": "https://i.ibb.co/YbgZHCh/n-U9-Ew-D4a-Q0-GAMOi-Tvlt-Q.png",
+    "duration": 28,
+    "lectures": 26,
+    "instructor": "Jonas Schmedtmann",
+    "rating": 4.8,
+    "enrolled": 8280,
+    "originalPrice": 84.99,
+    "currentPrice": 16.99,
+    "label": "Bestseller"
+  }
+  const course2 = {
+    "_id":"63666fadfa921dc82df75e54",
+    "title": "Advanced Course updated",
+    "subTitle": "The most advanced  master flexbox, CSS Grid, responsive design, and so much more.",
+    "description": "The most advanced and modern CSS course on the internet: master flexbox, CSS Grid, responsive design, and so much more.",
+    "thumbnail": "https://i.ibb.co/YbgZHCh/n-U9-Ew-D4a-Q0-GAMOi-Tvlt-Q.png",
+    "duration": 28,
+    "lectures": 26,
+    "instructor": "Jonas Schmedtmann",
+    "rating": 4.8,
+    "enrolled": 8280,
+    "originalPrice": 84.99,
+    "currentPrice": 16.99,
+    "label": "Bestseller"
+  }
+  const course3 = {
+    "_id":"63666c08d208eacd39f9cab1",
+    "title": "Advanced ",
+    "subTitle": "The most advanced  master flexbox, CSS Grid, responsive design, and so much more.",
+    "description": "The most advanced and modern CSS course on the internet: master flexbox, CSS Grid, responsive design, and so much more.",
+    "thumbnail": "https://i.ibb.co/YbgZHCh/n-U9-Ew-D4a-Q0-GAMOi-Tvlt-Q.png",
+    "duration": 28,
+    "lectures": 26,
+    "instructor": "Jonas Schmedtmann",
+    "rating": 4.8,
+    "enrolled": 8280,
+    "originalPrice": 84.99,
+    "currentPrice": 16.99,
+    "label": "Bestseller"
+  }
+
+  const addHandler = async () => {
+    await addCourse(course);
+    // refetch();
+  }
+  const updateHandler = async () => {
+    await updateCourse(course2);
+    // refetch();
+  }
+  const deleteHandler = async () => {
+    await deleteCourse(course3._id);
+    // refetch();
+  }
+  return (
+    <>
+      <button onClick={addHandler}>Add course</button>
+      <button onClick={updateHandler}>Update course</button>
+      <button onClick={deleteHandler}>Delete course</button>
+    </>
+  )
+}
+
+
+
 export default PopularCourses;
+

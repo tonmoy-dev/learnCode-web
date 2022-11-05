@@ -1,4 +1,4 @@
-import { useGetCoursesQuery } from "../../store/api/courses/coursesAPI";
+// import { useGetCoursesQuery } from "../../store/api/courses/coursesAPI";
 
 interface Course {
     _id: string,
@@ -17,11 +17,11 @@ interface Course {
 }
 
 const Courses:React.FC = () => {
-    const { data, error, isLoading, isFetching, isSuccess } = useGetCoursesQuery('courses');
+    // const { data, error, isLoading, isFetching, isSuccess } = useGetCoursesQuery('course');
     
     return (
         <div>
-            {isLoading && <p>Loading...</p>}
+            {/* {isLoading && <p>Loading...</p>}
             {isFetching && <p>Fetching...</p>}
             {error && <p>Got error</p>}
             {isSuccess && (
@@ -30,7 +30,7 @@ const Courses:React.FC = () => {
                         <p key={index}>{course.title}</p>
                     ))}
                 </div>
-            )}
+            )} */}
         </div>
     )
     

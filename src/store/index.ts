@@ -1,19 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 // import { combineReducers } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query/react';
-import { coursesApi } from './api/courses/coursesAPI';
+import { coursesApi } from '../services/api/coursesApi';
 
 export const store = configureStore({
     reducer: {
-        [coursesApi.reducerPath]: coursesApi.reducer,
+        [coursesApi.reducerPath]: coursesApi.reducer
     },
     // Adding the api middleware enables caching, invalidation, polling,
     // and other useful features of `rtk-query`.
-    
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(coursesApi.middleware),
-    
-    // middleware: (getDefaultMiddleware) =>
-    // getDefaultMiddleware().concat(pokemonApi.middleware)
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(coursesApi.middleware)
 });
 
 // optional, but required for refetchOnFocus/refetchOnReconnect behaviors
@@ -25,6 +21,3 @@ setupListeners(store.dispatch);
 export type RootState = ReturnType<typeof store.getState>
 // Inferred type: {courses: CoursesState,...}
 export type AppDispatch = typeof store.dispatch;
-
-/* const rootReducer = combineReducers({})
-export type RootState = ReturnType<typeof rootReducer> */
