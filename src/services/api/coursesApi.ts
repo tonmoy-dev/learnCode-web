@@ -4,7 +4,7 @@ import { Course, CourseType } from "../../models/course.model";
 export const coursesApi = createApi({
     reducerPath: "coursesApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: "http://localhost:5000/"
+        baseUrl: "http://localhost:5000"
     }),
     tagTypes:['Course'],
     endpoints: (builder) => ({
