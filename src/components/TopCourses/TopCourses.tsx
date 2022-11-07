@@ -1,14 +1,21 @@
+import { Space, Spin } from 'antd';
 import { AiFillStar } from 'react-icons/ai';
+import { BsFillCartPlusFill } from 'react-icons/bs';
 import { Course } from "../../models/course.model";
 import { useCoursesQuery } from "../../services/api/coursesApi";
 
 const TopCourses: React.FC = () => {
-	const { data, isLoading, isFetching, isSuccess } = useCoursesQuery();
+	const { data, isLoading, isFetching, isSuccess, isError } = useCoursesQuery();
 	return (
 		<div className="container mx-auto py-4">
 			<h1 className='text-center'>Popular Courses</h1>
-			<div className="grid grid-cols-4 gap-5">
-				{(isLoading || isFetching) && <p>Loading...</p>}
+			{(isLoading || isFetching || isError) && <div className='flex items-center justify-center h-48'>
+				<Space size="middle">
+					<Spin size="large" />
+				</Space>
+			</div>
+			}
+			<div className="grid grid-cols-4 gap-5 place-content-center">
 				{isSuccess && (
 					<>
 						{
@@ -29,7 +36,11 @@ const TopCourses: React.FC = () => {
 													<AiFillStar className='w-5 h-5 text-yellow-500 ml-2' />
 												</div>
 												<p className='text-xl font-semibold'>${course.currentPrice}</p>
-												<button className="text-base w-full text-white bg-indigo-600 py-2 rounded-md border-none outline-none cursor-pointer">View Course</button>
+												<div className="flex gap-3 justify-between items-center">
+													<button className="text-base text-white bg-indigo-600 px-4 py-2 rounded border-none outline-none cursor-pointer">View Course</button>
+													<button className="border-none outline-none cursor-pointer text-indigo-600"> <BsFillCartPlusFill className='w-6 h-6' /> </button>
+												</div>
+												
 											</div>
 										</div>
 									</div>

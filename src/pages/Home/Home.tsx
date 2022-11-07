@@ -1,8 +1,10 @@
 import { BackTop } from 'antd';
 import { IoMdRocket } from 'react-icons/io';
+import AuthModal from '../../components/Authentication/AuthModal';
 import Banner from '../../components/Banner/Banner';
 import Footer from '../../components/Footer/Footer';
 import Navbar from '../../components/Navigation/Navbar';
+import Pricing from '../../components/Pricing/Pricing';
 import TopCourses from '../../components/TopCourses/TopCourses';
 
 
@@ -10,8 +12,10 @@ const Home: React.FC = () => {
     return (
         <div>
             <Navbar />
+            <AuthModal/>
             <Banner />
-            <TopCourses/>
+            <TopCourses />
+            <Pricing/>
             <Footer/>
             <BackTop
                 duration={1000}
