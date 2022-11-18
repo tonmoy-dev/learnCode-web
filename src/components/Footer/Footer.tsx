@@ -1,5 +1,5 @@
-import { FacebookFilled, InstagramFilled, LinkedinFilled, TwitterSquareFilled } from "@ant-design/icons";
 import { Typography } from "antd";
+import { AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillTwitterSquare } from 'react-icons/ai';
 
 const Footer: React.FC = () => {
 	const { Title } = Typography;
@@ -17,10 +17,10 @@ const Footer: React.FC = () => {
 						<p>support@learncode.com</p>
 					</div>
 					<div className="flex gap-6">
-						<FacebookFilled style={{ fontSize: '28px', color: '#aaa' }} />
-						<TwitterSquareFilled style={{ fontSize: '28px', color: '#aaa' }} />
-						<InstagramFilled style={{ fontSize: '28px', color: '#aaa' }} />
-						<LinkedinFilled style={{ fontSize: '28px', color: '#aaa' }} />
+						<AiFillFacebook style={{ fontSize: '28px', color: '#aaa' }} />
+						<AiFillTwitterSquare style={{ fontSize: '28px', color: '#aaa' }} />
+						<AiFillInstagram style={{ fontSize: '28px', color: '#aaa' }} />
+						<AiFillLinkedin style={{ fontSize: '28px', color: '#aaa' }} />
 					</div>
 				</div>
 				<div className="w-full md:w-2/4 mx-auto">

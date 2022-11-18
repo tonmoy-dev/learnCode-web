@@ -1,6 +1,6 @@
-import { MenuOutlined } from "@ant-design/icons";
 import { Button, Drawer, Layout } from "antd";
 import { useEffect, useState } from "react";
+import { AiOutlineMenu } from 'react-icons/ai';
 import { useLocation } from 'react-router-dom';
 import LeftMenu from "./LeftMenu";
 import RightMenu from "./RightMenu";
@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
               <LeftMenu mode={"horizontal"} />
             </div>
             <Button className="menuButton" type="text" onClick={showDrawer}>
-              <MenuOutlined />
+              <AiOutlineMenu />
             </Button>
             <div className="rightMenu">
               <RightMenu mode={"horizontal"} />

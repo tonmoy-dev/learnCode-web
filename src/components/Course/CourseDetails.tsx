@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import { AiFillHeart } from 'react-icons/ai'
 import { FaShoppingBag } from 'react-icons/fa'
@@ -37,7 +36,7 @@ const ProductDetails4 = () => {
     ]
   }
 
-  const [mainPicture, setMainPicture] = useState(0)
+  const [mainPicture, setMainPicture] = useState(0);
 
   const starsNumber = Math.floor(product.rating)
   const isHalfStar = !Number.isInteger(product.rating)

@@ -1,6 +1,5 @@
-import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
 import { Avatar, Menu } from "antd";
-
+import { AiOutlineLogout, AiOutlineUser } from 'react-icons/ai';
 
 const RightMenu:any = ({mode}:any) => {
   
@@ -9,16 +8,16 @@ const RightMenu:any = ({mode}:any) => {
       <Menu.SubMenu
         title={
           <>
-            <Avatar icon={<UserOutlined />} />
+            <Avatar icon={<AiOutlineUser />} />
             <span className="username">Rx</span>
           </>
         }
       >
         <Menu.Item key="profile">
-          <UserOutlined /> Profile
+          <AiOutlineUser /> Profile
         </Menu.Item>
         <Menu.Item key="log-out">
-          <LogoutOutlined /> Logout
+          <AiOutlineLogout /> Logout
         </Menu.Item>
       </Menu.SubMenu>
     </Menu>

@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import CourseDetails from './components/Course/CourseDetails';
-import Home from './pages/Home/Home';
+import CodePlayground from './pages/CodePlayground';
+import Home from './pages/Home';
+
 
 function App() {
   return (
@@ -9,6 +11,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Home/>} />
+          <Route path='/code-playground' element={<CodePlayground/>} />
           <Route path='/course/:id' element={<CourseDetails/>} />
           <Route path='*' element={<Home/>} />
         </Routes>
