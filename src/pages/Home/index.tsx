@@ -1,6 +1,5 @@
 import { BackTop } from 'antd';
 import { IoMdRocket } from 'react-icons/io';
-import AuthModal from '../../components/Authentication/AuthModal';
 import Banner from '../../components/Banner/Banner';
 import Footer from '../../components/Footer/Footer';
 import Navbar from '../../components/Navigation/Navbar';
@@ -12,7 +11,6 @@ const Home: React.FC = () => {
     return (
         <div>
             <Navbar />
-            <AuthModal/>
             <Banner />
             <TopCourses />
             <Pricing/>

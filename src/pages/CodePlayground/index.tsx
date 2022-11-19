@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Navbar from "../../components/Navigation/Navbar";
 
 const CodePlayground = () => {
   const [code, setCode] = useState({
@@ -8,6 +9,8 @@ const CodePlayground = () => {
   });
 
   return (
+    <>
+      <Navbar/>
     <div className="py-5 playground-bg-color px-3">
       <h2 className="text-center m-3 text-base md:text-xl lg:text-2xl text-white">Code Editor for Web Dev</h2>
       <div className="container mx-auto h-screen">
@@ -50,7 +53,8 @@ const CodePlayground = () => {
             />
       </div>
       <div className="preview h-1/2 bg-white">
-        <iframe
+          <iframe
+            className="w-full"
           srcDoc={
             `
               <main>
@@ -73,7 +77,8 @@ const CodePlayground = () => {
           frameBorder={0}/>
         </div>
         </div>
-    </div>
+      </div>
+      </>
   );
 };
 

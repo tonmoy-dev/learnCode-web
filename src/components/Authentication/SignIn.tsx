@@ -4,7 +4,7 @@ import { AiOutlineLock, AiOutlineUser } from 'react-icons/ai';
 
 const SignIn: React.FC = () => {
   const onFinish = (values: any) => {
-    console.log('Received values of form: ', values);
+    // console.log('Received values of form: ', values);
   };
 
   return (

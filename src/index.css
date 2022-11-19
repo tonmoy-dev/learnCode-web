@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */
   font-family: 'Open Sans', sans-serif;
@@ -22,6 +21,52 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+}
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
 
 textarea:focus{
@@ -65,7 +110,6 @@ textarea::placeholder{
     0 6px 16px -11px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
-  margin-bottom: 20px;
   z-index: 99990;
 }
 

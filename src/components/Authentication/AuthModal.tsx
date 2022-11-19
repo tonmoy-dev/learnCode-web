@@ -1,4 +1,4 @@
-import { Button, Modal } from 'antd';
+import { Modal } from 'antd';
 import React, { useState } from 'react';
 import SignIn from './SignIn';
 
@@ -21,15 +21,15 @@ const AuthModal: React.FC = () => {
   };
 
   const handleCancel = () => {
-    console.log('Clicked cancel button');
+    // console.log('Clicked cancel button');
     setOpen(false);
   };
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
-        Open Modal with async logic
-      </Button>
+      <span onClick={showModal}>
+        Login
+      </span>
       <Modal
               title="Title"
               centered
