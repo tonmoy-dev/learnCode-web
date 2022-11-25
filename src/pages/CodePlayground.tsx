@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Navbar from "../../components/Navigation/Navbar";
+import Navbar from "../components/Navbar";
 
 const CodePlayground = () => {
   const [code, setCode] = useState({
