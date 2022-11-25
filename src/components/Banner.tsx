@@ -1,5 +1,5 @@
 import { Button } from "antd";
-import bannerImg from '../../assets/images/banner/hand_coding.gif';
+import bannerImg from '../assets/images/banner/hand_coding.gif';
 
 const Banner: React.FC = () => {
 
