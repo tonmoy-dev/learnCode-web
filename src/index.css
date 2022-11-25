@@ -69,6 +69,21 @@ video {
   height: auto;
 }
 
+a{
+  text-decoration: none;
+}
+a:focus,a:active,a:link,a:visited{
+  color: inherit;
+}
+input,select,button{
+  border: none;
+  color: inherit;
+}
+a,button{
+  cursor: pointer;
+}
+
+/* code editor */
 textarea:focus{
   scale: 1;
   outline: none;

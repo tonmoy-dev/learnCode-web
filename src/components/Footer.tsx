@@ -3,7 +3,7 @@ import { AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillTwitterSquare } 
 
 const Footer: React.FC = () => {
 	const { Title } = Typography;
-	
+
 	return (
 		<div className="container mx-auto text-start py-5 px-10 md:px-0">
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-4">

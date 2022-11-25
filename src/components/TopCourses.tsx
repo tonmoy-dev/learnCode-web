@@ -1,8 +1,8 @@
 import { Space, Spin } from 'antd';
 import { AiFillStar } from 'react-icons/ai';
 import { BsFillCartPlusFill } from 'react-icons/bs';
-import { Course } from "../../models/course.model";
-import { useCoursesQuery } from "../../services/api/coursesApi";
+import { Course } from "../models/course.model";
+import { useCoursesQuery } from "../services/api/coursesApi";
 
 const TopCourses: React.FC = () => {
 	const { data, isLoading, isFetching, isSuccess, isError } = useCoursesQuery();

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Course } from '../../models/course.model';
-import { useAddCourseMutation, useCourseQuery, useCoursesQuery, useDeleteCourseMutation, useUpdateCourseMutation } from "../../services/api/coursesApi";
+import { Course } from '../models/course.model';
+import { useAddCourseMutation, useCourseQuery, useCoursesQuery, useDeleteCourseMutation, useUpdateCourseMutation } from "../services/api/coursesApi";
 
 
 const PopularCourses: React.FC = () => {

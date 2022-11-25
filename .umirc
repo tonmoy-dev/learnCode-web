@@ -1,0 +1,6 @@
+// config/config.ts or .umirc
+export default {
+  antd: {
+-   import: true,
+  },
+};
